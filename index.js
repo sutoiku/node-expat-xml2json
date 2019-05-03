@@ -1,1 +1,3 @@
-module.exports = require('./lib');
+'use strict';
+
+exports.toJson = require('./lib/xml2json');

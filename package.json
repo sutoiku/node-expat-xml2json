@@ -1,23 +1,24 @@
 {
-  "name": "xml2json",
-  "version": "0.11.2",
+  "name": "node-expat-xml2json",
+  "version": "1.0.0",
   "description": "Converts xml to json and vice-versa, using node-expat.",
-  "repository": "git://github.com/buglabs/node-xml2json.git",
+  "repository": "git://github.com:sutoiku/node-expat-xml2json.git",
   "license": "MIT",
   "main": "index",
   "scripts": {
-    "test": "lab -a code -v -t 93 test/test.js"
+    "format": "prettier --write './!(node_modules)/**/*.js' '*.js'",
+    "lint": "./node_modules/.bin/eslint .",
+    "test": "mocha test/test.js"
   },
   "dependencies": {
-    "hoek": "^4.2.1",
-    "joi": "^13.1.2",
-    "node-expat": "^2.3.17"
-  },
-  "bin": {
-    "xml2json": "bin/xml2json"
+    "node-expat": "github:sutoiku/node-expat#6ea0e52694b921195c42a9bec2b3226e0c2949cf"
   },
   "devDependencies": {
-    "code": "^3.0.2",
-    "lab": "^18.0.0"
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-stoic": "^4.1.1",
+    "mocha": "^6.1.4",
+    "prettier": "^1.17.0"
   }
 }

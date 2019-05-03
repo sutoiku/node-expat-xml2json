@@ -1,0 +1,11 @@
+{
+  "plugins": ["stoic", "prettier"],
+  "extends": ["plugin:stoic/recommended"],
+  "parserOptions": { "ecmaVersion": 8 },
+  "env": { "es6": true, "node": true, "browser": false, "mocha": true },
+  "rules": {
+    "no-console": 2,
+    "space-before-function-paren": 0,
+    "prettier/prettier": "error"
+  }
+}
