@@ -161,12 +161,38 @@ describe('xml2json', function() {
 });
 
 describe('json2xml', function() {
+  it('converts domain to json', function() {
+    const json = readFixture('domain-reversible.json');
+    const result = parser.toXml(json);
+    const xml = readFixture('domain.xml');
+
+    expect(result + '\n').to.equal(xml);
+  });
+
   it('works with array notation', function() {
     const xml = readFixture('array-notation.xml');
     const expectedJson = JSON.parse(readFixture('array-notation.json'));
 
     const json = parser.toJson(xml, { object: true, arrayNotation: true });
     expect(json).to.deep.equal(expectedJson);
+  });
+
+  describe('ignore null', function() {
+    it('ignore null properties {ignoreNull: true}', function() {
+      const json = JSON.parse(readFixture('null-properties.json'));
+      const expectedXml = readFixture('null-properties-ignored.xml');
+
+      const xml = parser.toXml(json, { ignoreNull: true });
+      expect(xml).to.equal(expectedXml);
+    });
+
+    it("don't ignore null properties (default)", function() {
+      const json = JSON.parse(readFixture('null-properties.json'));
+      const expectedXml = readFixture('null-properties-not-ignored.xml');
+
+      const xml = parser.toXml(json);
+      expect(xml).to.equal(expectedXml);
+    });
   });
 });
 
