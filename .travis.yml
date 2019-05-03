@@ -1,12 +1,23 @@
 sudo: required
+
 language: node_js
+
 env:
   - CXX="g++-4.8"
 
 node_js:
+  - "12"
+  - "11"
   - "10"
   - "9"
   - "8"
+
+install:
+  - npm install
+
+script:
+  - npm run lint
+  - npm test
 
 addons:
   apt:
