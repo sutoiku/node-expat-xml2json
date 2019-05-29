@@ -1,6 +1,6 @@
 {
   "name": "node-expat-xml2json",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Converts xml to json and vice-versa, using node-expat.",
   "repository": "git://github.com:sutoiku/node-expat-xml2json.git",
   "license": "MIT",
